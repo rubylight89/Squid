@@ -249,6 +249,15 @@
     _monster = [Monster spriteNodeWithImageNamed:@"enemy_default"];
     [_monster setName:kMonsterNode];
     _monster.position = CGPointMake(CGRectGetMidX(self.frame),400);
+    SKAction *scale1 = [SKAction scaleTo:1.02 duration:1.0];
+    SKAction *scale2 =  [SKAction scaleTo:0.98 duration:1.0];
+    SKAction *seq1 = [SKAction sequence:@[scale1, scale2]];
+    SKAction *fade1 = [SKAction fadeAlphaTo:1.0 duration:1.0];
+    SKAction *fade2 =  [SKAction fadeAlphaTo:0.9 duration:1.0];
+    SKAction *seq2 = [SKAction sequence:@[fade1, fade2]];
+    SKAction *act =[ SKAction group:@[seq1, seq2]];
+    SKAction *actr =  [SKAction repeatActionForever:act];
+    [_monster runAction:actr];
     [self addChild:_monster];
 }
 
