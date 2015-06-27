@@ -54,6 +54,7 @@
 		9BDFAD9D1B3EFC0D000E763A /* player_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD8B1B3EFC0D000E763A /* player_title@2x.png */; };
 		9BDFAD9E1B3EFC0D000E763A /* rabbit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD8C1B3EFC0D000E763A /* rabbit@2x.png */; };
 		9BDFADA01B3EFC0D000E763A /* temp_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD8E1B3EFC0D000E763A /* temp_btn@2x.png */; };
+		9BDFADA31B3F0946000E763A /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFADA21B3F0946000E763A /* Weapon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		9BDFAD8B1B3EFC0D000E763A /* player_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_title@2x.png"; sourceTree = "<group>"; };
 		9BDFAD8C1B3EFC0D000E763A /* rabbit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rabbit@2x.png"; sourceTree = "<group>"; };
 		9BDFAD8E1B3EFC0D000E763A /* temp_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_btn@2x.png"; sourceTree = "<group>"; };
+		9BDFADA11B3F0946000E763A /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
+		9BDFADA21B3F0946000E763A /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +271,8 @@
 				9BDFAD4E1B3ECF53000E763A /* Monster.m */,
 				9BDFAD531B3EDF60000E763A /* Skill.h */,
 				9BDFAD541B3EDF60000E763A /* Skill.m */,
+				9BDFADA11B3F0946000E763A /* Weapon.h */,
+				9BDFADA21B3F0946000E763A /* Weapon.m */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				9BDFAD551B3EDF60000E763A /* Skill.m in Sources */,
 				9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */,
 				9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */,
+				9BDFADA31B3F0946000E763A /* Weapon.m in Sources */,
 				9BB931671B3E9ECE0081B38E /* GameScene.m in Sources */,
 				9BCBB7F41B3E93360059100E /* main.m in Sources */,
 			);
@@ -581,11 +587,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Squid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e433647c-3327-41a1-bf27-2b9b8d3f96b4";
+				PROVISIONING_PROFILE = "77f36fb4-95d5-4311-9bb1-a96d41bc32f1";
 			};
 			name = Debug;
 		};
@@ -593,11 +600,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Squid/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e433647c-3327-41a1-bf27-2b9b8d3f96b4";
+				PROVISIONING_PROFILE = "77f36fb4-95d5-4311-9bb1-a96d41bc32f1";
 			};
 			name = Release;
 		};
