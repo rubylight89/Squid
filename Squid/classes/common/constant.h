@@ -13,6 +13,10 @@ static NSString* const kCameraAccessNotificationName = @"CameraAccessNotificatio
 static NSString* const kCameraCloseNotificationName = @"CameraClosedNotificationName";
 static NSString* const kMonsterNode = @"monster";
 static NSString* const kCameraNode = @"camera_buton";
+static NSString* const kWeaponR = @"weapon_R";
+static NSString* const kWeaponG = @"weapon_G";
+static NSString* const kWeaponB = @"weapon_B";
+static NSString* const kWeaponBlack = @"weapon_Black";
 
 typedef enum{
     RED = 0,

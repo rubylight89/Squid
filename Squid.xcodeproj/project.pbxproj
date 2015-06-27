@@ -55,6 +55,11 @@
 		9BDFAD9E1B3EFC0D000E763A /* rabbit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD8C1B3EFC0D000E763A /* rabbit@2x.png */; };
 		9BDFADA01B3EFC0D000E763A /* temp_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD8E1B3EFC0D000E763A /* temp_btn@2x.png */; };
 		9BDFADA31B3F0946000E763A /* Weapon.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFADA21B3F0946000E763A /* Weapon.m */; };
+		9BDFADA61B3F1CFB000E763A /* HpBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFADA51B3F1CFB000E763A /* HpBar.m */; };
+		9BDFADAB1B3F3627000E763A /* enemy_bar_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFADA71B3F3627000E763A /* enemy_bar_full.png */; };
+		9BDFADAC1B3F3627000E763A /* enemy_bar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFADA81B3F3627000E763A /* enemy_bar_full@2x.png */; };
+		9BDFADAD1B3F3627000E763A /* player_bar_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFADA91B3F3627000E763A /* player_bar_full.png */; };
+		9BDFADAE1B3F3627000E763A /* player_bar_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFADAA1B3F3627000E763A /* player_bar_full@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +133,12 @@
 		9BDFAD8E1B3EFC0D000E763A /* temp_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp_btn@2x.png"; sourceTree = "<group>"; };
 		9BDFADA11B3F0946000E763A /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		9BDFADA21B3F0946000E763A /* Weapon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weapon.m; sourceTree = "<group>"; };
+		9BDFADA41B3F1CFB000E763A /* HpBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpBar.h; sourceTree = "<group>"; };
+		9BDFADA51B3F1CFB000E763A /* HpBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpBar.m; sourceTree = "<group>"; };
+		9BDFADA71B3F3627000E763A /* enemy_bar_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy_bar_full.png; sourceTree = "<group>"; };
+		9BDFADA81B3F3627000E763A /* enemy_bar_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemy_bar_full@2x.png"; sourceTree = "<group>"; };
+		9BDFADA91B3F3627000E763A /* player_bar_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_bar_full.png; sourceTree = "<group>"; };
+		9BDFADAA1B3F3627000E763A /* player_bar_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_bar_full@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +284,8 @@
 				9BDFAD541B3EDF60000E763A /* Skill.m */,
 				9BDFADA11B3F0946000E763A /* Weapon.h */,
 				9BDFADA21B3F0946000E763A /* Weapon.m */,
+				9BDFADA41B3F1CFB000E763A /* HpBar.h */,
+				9BDFADA51B3F1CFB000E763A /* HpBar.m */,
 			);
 			path = object;
 			sourceTree = "<group>";
@@ -280,6 +293,10 @@
 		9BDFAD561B3EEE4F000E763A /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9BDFADA71B3F3627000E763A /* enemy_bar_full.png */,
+				9BDFADA81B3F3627000E763A /* enemy_bar_full@2x.png */,
+				9BDFADA91B3F3627000E763A /* player_bar_full.png */,
+				9BDFADAA1B3F3627000E763A /* player_bar_full@2x.png */,
 				9BDFAD7D1B3EFC0D000E763A /* enemy_bar_empty@2x.png */,
 				9BDFAD7E1B3EFC0D000E763A /* enemy_bg1@2x.png */,
 				9BDFAD7F1B3EFC0D000E763A /* enemy_bg2@2x.png */,
@@ -401,6 +418,7 @@
 				9BDFAD941B3EFC0D000E763A /* enemy_result@2x.png in Resources */,
 				9BDFAD6F1B3EF812000E763A /* enemy_default.png in Resources */,
 				9BDFAD9E1B3EFC0D000E763A /* rabbit@2x.png in Resources */,
+				9BDFADAE1B3F3627000E763A /* player_bar_full@2x.png in Resources */,
 				9BDFAD921B3EFC0D000E763A /* enemy_default@2x.png in Resources */,
 				9BDFAD9C1B3EFC0D000E763A /* player_bar_empty@2x.png in Resources */,
 				9BDFAD9B1B3EFC0D000E763A /* photo_container4@2x.png in Resources */,
@@ -409,6 +427,7 @@
 				9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */,
 				9BDFAD781B3EF812000E763A /* photo_container4.png in Resources */,
 				9BDFAD7C1B3EF812000E763A /* temp_btn.png in Resources */,
+				9BDFADAD1B3F3627000E763A /* player_bar_full.png in Resources */,
 				9BDFAD901B3EFC0D000E763A /* enemy_bg1@2x.png in Resources */,
 				9BDFAD771B3EF812000E763A /* photo_container3.png in Resources */,
 				9BDFAD6E1B3EF812000E763A /* enemy_bg2.png in Resources */,
@@ -431,9 +450,11 @@
 				9BDFAD791B3EF812000E763A /* player_bar_empty.png in Resources */,
 				9BDFAD721B3EF812000E763A /* enemy_title.png in Resources */,
 				9BDFAD741B3EF812000E763A /* photo_btn.png in Resources */,
+				9BDFADAB1B3F3627000E763A /* enemy_bar_full.png in Resources */,
 				9BDFAD5A1B3EEE6E000E763A /* rabbit.png in Resources */,
 				9BDFAD9A1B3EFC0D000E763A /* photo_container3@2x.png in Resources */,
 				9BDFAD6C1B3EF812000E763A /* enemy_bar_empty.png in Resources */,
+				9BDFADAC1B3F3627000E763A /* enemy_bar_full@2x.png in Resources */,
 				9BDFAD7A1B3EF812000E763A /* player_title.png in Resources */,
 				9BDFAD6D1B3EF812000E763A /* enemy_bg1.png in Resources */,
 				9BDFAD961B3EFC0D000E763A /* game_bg@2x.png in Resources */,
@@ -457,6 +478,7 @@
 				9BDFAD4F1B3ECF53000E763A /* Monster.m in Sources */,
 				9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */,
 				9BDFAD551B3EDF60000E763A /* Skill.m in Sources */,
+				9BDFADA61B3F1CFB000E763A /* HpBar.m in Sources */,
 				9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */,
 				9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */,
 				9BDFADA31B3F0946000E763A /* Weapon.m in Sources */,
