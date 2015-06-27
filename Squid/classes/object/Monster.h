@@ -11,6 +11,8 @@
 @interface Monster : SKSpriteNode{
 }
 
+@property (assign) BOOL isAlive;
+
 - (void) wait;
 - (void) attack;
 - (void) hurt;

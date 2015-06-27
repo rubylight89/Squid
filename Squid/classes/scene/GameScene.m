@@ -12,6 +12,7 @@
 
 #define COLOR_DIF 7
 #import "Weapon.h"
+#import "HpBar.h"
 
 @implementation GameScene
 
@@ -32,6 +33,7 @@
     
     //    [GameManager sharedManager].takingPhoto = [UIImage imageNamed:@"remi.png"];
     
+    [self setupVariables];
     // background
     [self createBackground];
     
@@ -47,6 +49,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCameraClosed) name:kCameraCloseNotificationName object:nil];
     
     //    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(attackMonster:)]];
+}
+
+-(void)setupVariables{
+    turnIndex = 0;
+    isPlayerAlive = YES;
 }
 
 -(void)moveBall:(UIPanGestureRecognizer *)panGestureRecognizer {
@@ -80,10 +87,17 @@
         CGPoint location = [touch locationInNode:self];
         
         SKNode *selectNode = [self nodeAtPoint:location];
+        // tap on monster
         if ([selectNode.name compare:kMonsterNode] == NSOrderedSame) {
             
         } else if ([selectNode.name compare:kCameraNode] == NSOrderedSame){
+            // open camera
             [self postNotificationAccessCamera];
+        }
+        
+        // tap on weapon
+        if ([selectNode isKindOfClass:[Weapon class]]) {
+            [self handleWeaponTapped:(Weapon *)selectNode];
         }
     }
     
@@ -116,35 +130,108 @@
             case RED:{
                 [_weapon_R setPictureNode:image];
                 [_weapon_R setFrameNode:@"photo_container1"];
+                [_weapon_R setColor_result:result];
             }
                 break;
                 
             case GREEN:{
                 [_weapon_G setPictureNode:image];
                 [_weapon_G setFrameNode:@"photo_container2"];
+                [_weapon_G setColor_result:result];
             }
                 break;
                 
             case BLUE:{
                 [_weapon_B setPictureNode:image];
                 [_weapon_B setFrameNode:@"photo_container3"];
+                [_weapon_B setColor_result:result];
             }
                 break;
                 
             case BLACK:{
                 [_weapon_BLACK setPictureNode:image];
                 [_weapon_BLACK setFrameNode:@"photo_container4"];
+                [_weapon_BLACK setColor_result:result];
             }
                 break;
                 
             default:{
                 [_weapon_BLACK setPictureNode:image];
                 [_weapon_BLACK setFrameNode:@"photo_container4"];
+                [_weapon_BLACK setColor_result:result];
             }
                 break;
         }
     }
 }
+
+// attact monster
+-(void)handleWeaponTapped:(Weapon *)weapon{
+    if (turnIndex % 2 != 0 || isPlayerAlive == NO) {
+        return;
+    }
+    
+    turnIndex++;
+    switch (weapon.color_result) {
+        case RED:{
+            //reduce enemy blood (devide hp to 6 parts)
+            [self.hpEnemyBar reduceHPValue:6];
+        }
+            break;
+            
+        case GREEN:{
+            //up again
+            [self.hpPlayerBar increaseHPValue:6];
+        }
+            break;
+            
+        case BLUE:{
+            isDefense = YES;
+        }
+            break;
+            
+        case BLACK:{
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (self.hpEnemyBar.size.width <= 0) {
+        NSLog(@">>>> monster Die");
+        self.monster.isAlive = NO;
+        [self flashMessage:@"You win" atPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)) duration:2 color:[SKColor whiteColor]];
+    }else{
+        [self performSelector:@selector(beingAttacted) withObject:nil afterDelay:0.7];
+    }
+}
+
+-(void)beingAttacted{
+    if (turnIndex % 2 == 0 || !self.monster.isAlive) {
+        return;
+    }
+    
+    turnIndex++;
+    if (isDefense) {
+        [self flashMessage:@"MISC" atPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)) duration:1 color:[SKColor redColor]];
+        isDefense = NO;
+    }else{
+        [self.hpPlayerBar reduceHPValue:6];
+        [self flashMessage:@"Being attated" atPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)) duration:1 color:[SKColor redColor]];
+    }
+    
+    if (self.hpPlayerBar.size.width <= 0) {
+        NSLog(@">>>> player Die");
+        isPlayerAlive = NO;
+    }
+}
+
+-(void)gameOver{
+    [self flashMessage:@"GAME OVER" atPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)) duration:2 color:[SKColor redColor]];
+}
+
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
@@ -232,21 +319,24 @@
     enemyText.position = CGPointMake(40, self.frame.size.height - 50);
     [self addChild:enemyText];
     
-    SKSpriteNode* enemyHPBar = [SKSpriteNode spriteNodeWithImageNamed:@"enemy_bar_empty"];
-    enemyHPBar.position = CGPointMake(230, self.frame.size.height - 50);
-    [self addChild:enemyHPBar];
+    _hpEnemyBar =  [HpBar spriteNodeWithImageNamed:@"enemy_bar_full"];
+    _hpEnemyBar.position = CGPointMake(230, self.frame.size.height - 50);
+    [_hpEnemyBar setUpHPBar];
+    [self addChild:_hpEnemyBar];
     
     SKSpriteNode* playerText = [SKSpriteNode spriteNodeWithImageNamed:@"player_title"];
     playerText.position = CGPointMake(40, 140);
     [self addChild:playerText];
     
-    SKSpriteNode* playerHPBar = [SKSpriteNode spriteNodeWithImageNamed:@"player_bar_empty"];
-    playerHPBar.position = CGPointMake(230, 150);
-    [self addChild:playerHPBar];
+    _hpPlayerBar = [HpBar spriteNodeWithImageNamed:@"player_bar_full"];
+    _hpPlayerBar.position = CGPointMake(230, 150);
+    [_hpPlayerBar setUpHPBar];
+    [self addChild:_hpPlayerBar];
 }
 
 -(void)createMonster{
     _monster = [Monster spriteNodeWithImageNamed:@"enemy_default"];
+    _monster.isAlive = YES;
     [_monster setName:kMonsterNode];
     _monster.position = CGPointMake(CGRectGetMidX(self.frame),400);
     [self addChild:_monster];
@@ -261,20 +351,48 @@
 
 -(void)createWeapons{
     _weapon_R = [Weapon spriteNodeWithImageNamed:@"photo_container1"];
+    [_weapon_R setName:kWeaponR];
     _weapon_R.position = CGPointMake(CGRectGetMidX(self.frame)-140, 200);
     [self addChild:_weapon_R];
     
     _weapon_G = [Weapon spriteNodeWithImageNamed:@"photo_container2"];
+    [_weapon_G setName:kWeaponG];
     _weapon_G.position = CGPointMake(CGRectGetMidX(self.frame)-50, 200);
     [self addChild:_weapon_G];
     
     _weapon_B = [Weapon spriteNodeWithImageNamed:@"photo_container3"];
+    [_weapon_B setName:kWeaponB];
     _weapon_B.position = CGPointMake(CGRectGetMidX(self.frame)+50, 200);
     [self addChild:_weapon_B];
     
     _weapon_BLACK = [Weapon spriteNodeWithImageNamed:@"photo_container4"];
+    [_weapon_BLACK setName:kWeaponBlack];
     _weapon_BLACK.position = CGPointMake(CGRectGetMidX(self.frame)+140, 200);
     [self addChild:_weapon_BLACK];
+}
+
+-(void)flashMessage:(NSString *)message atPosition:(CGPoint)position duration:(NSTimeInterval)duration color:(SKColor*)color{
+    //a method to make a sprite for a flash message at a certain position on the screen
+    //to be used for instructions
+    
+    //make a label that is invisible
+    SKLabelNode *flashLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+    flashLabel.position = position;
+    flashLabel.fontSize = 40;
+    flashLabel.fontColor = color;
+    flashLabel.text = message;
+    flashLabel.alpha =0;
+    flashLabel.zPosition = 100;
+    [self addChild:flashLabel];
+    //make an animation sequence to flash in and out the label
+    SKAction *flashAction = [SKAction sequence:@[
+                                                 [SKAction fadeInWithDuration:duration/3.0],
+                                                 [SKAction waitForDuration:duration],
+                                                 [SKAction fadeOutWithDuration:duration/3.0]
+                                                 ]];
+    // run the sequence then delete the label
+    [flashLabel runAction:flashAction completion:^{[flashLabel removeFromParent];}];
+    
 }
 
 @end

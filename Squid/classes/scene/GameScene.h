@@ -11,8 +11,13 @@
 
 @class Monster;
 @class Weapon;
+@class HpBar;
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene{
+    int turnIndex;
+    BOOL isDefense;
+    BOOL isPlayerAlive;
+}
 
 @property (nonatomic, strong) Monster* monster;
 @property (nonatomic, strong) SKSpriteNode* cameraNode;
@@ -20,6 +25,8 @@
 @property (nonatomic, strong) Weapon* weapon_G;
 @property (nonatomic, strong) Weapon* weapon_B;
 @property (nonatomic, strong) Weapon* weapon_BLACK;
+@property (nonatomic, strong) HpBar* hpEnemyBar;
+@property (nonatomic, strong) HpBar* hpPlayerBar;
 
 -(void)createBackground;
 -(COLOR_DECTION_RESULT) colorDectionResultFromImage:(UIImage *)image;
