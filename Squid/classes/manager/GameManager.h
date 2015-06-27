@@ -13,6 +13,9 @@
 @interface GameManager : NSObject
 
 @property (nonatomic, strong) UIImage *takingPhoto;
+@property (nonatomic, strong) UIImage *takingPhoto2;
+@property (nonatomic, strong) UIImage *takingPhoto3;
+@property (nonatomic, strong) UIImage *takingPhoto4;
 
 +(GameManager*)sharedManager;
 
