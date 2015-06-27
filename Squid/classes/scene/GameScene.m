@@ -261,9 +261,9 @@
             UInt8*  pixelPtr = buffer + (int)(y) * bytesPerRow + (int)(x) * 4;
             
             // 色情報を取得する
-            UInt8 r = *(pixelPtr + 0);  // 赤
-            UInt8 g = *(pixelPtr + 1);  // 緑
-            UInt8 b = *(pixelPtr + 2);  // 青
+            UInt8 r = *(pixelPtr + 3);  // 赤
+            UInt8 g = *(pixelPtr + 2);  // 緑
+            UInt8 b = *(pixelPtr + 1);  // 青
             
             int rint = (int)r;
             int gint = (int)g;
