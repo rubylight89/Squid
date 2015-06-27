@@ -8,6 +8,8 @@
 
 #import "GameScene.h"
 #import "GameManager.h"
+#import "Monster.h"
+
 #define COLOR_DIF 7
 
 @implementation GameScene
@@ -27,17 +29,14 @@
      [self addChild:myLabel];
      */
     
-    _monster = [SKSpriteNode spriteNodeWithImageNamed:@"rabbit.png"];
-    [_monster setName:kMonsterNode];
-    _monster.position = CGPointMake(CGRectGetMidX(self.frame),
-                                    CGRectGetMidY(self.frame));
-    [self addChild:_monster];
+    // background
+    [self createBackground];
     
+    // monster
+    [self createMonster];
     
-    SKSpriteNode *cameraButton = [SKSpriteNode spriteNodeWithImageNamed:@"camera.png"];
-    cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), 50);
-    [cameraButton setName:kCameraNode];
-    [self addChild:cameraButton];
+    // ui
+    [self createUI];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCameraClosed) name:kCameraCloseNotificationName object:nil];
     
@@ -139,6 +138,27 @@
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+}
+
+-(void)createBackground {
+//    SKSpriteNode* background = [SKSpriteNode spriteNodeWithImageNamed:@"bg.png"];
+//    background.position = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+//    [self addChild:background];
+}
+
+-(void)createMonster{
+    _monster = [Monster spriteNodeWithImageNamed:@"rabbit.png"];
+    [_monster setName:kMonsterNode];
+    _monster.position = CGPointMake(CGRectGetMidX(self.frame),
+                                    CGRectGetMidY(self.frame));
+    [self addChild:_monster];
+}
+
+-(void)createUI{
+    SKSpriteNode *cameraButton = [SKSpriteNode spriteNodeWithImageNamed:@"camera.png"];
+    cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), 50);
+    [cameraButton setName:kCameraNode];
+    [self addChild:cameraButton];
 }
 
 @end

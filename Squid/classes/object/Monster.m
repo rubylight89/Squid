@@ -10,4 +10,17 @@
 
 @implementation Monster
 
+- (void)attack{
+    
+}
+
+- (void)hurt{
+    
+}
+
+- (void)wait{
+    
+}
+
+
 @end

@@ -63,9 +63,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        
-        //[GameManager sharedManager].takingPhoto = editedImage;
-        [GameManager sharedManager].takingPhoto = [UIImage imageNamed:@"remi.png"];
+
+        [GameManager sharedManager].takingPhoto = editedImage;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCameraCloseNotificationName object:self userInfo:nil];
     }];
 }

@@ -12,15 +12,16 @@
 		9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB931631B3E9ECE0081B38E /* GameScene.sks */; };
 		9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931661B3E9ECE0081B38E /* GameViewController.m */; };
 		9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9316C1B3EA1F80081B38E /* GameManager.m */; };
-		9BC1C83F1B3EBC1B0089E3E4 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1C83E1B3EBC1B0089E3E4 /* camera.png */; };
 		9BCBB7F41B3E93360059100E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F31B3E93360059100E /* main.m */; };
 		9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F61B3E93360059100E /* AppDelegate.m */; };
 		9BCBB8021B3E93360059100E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8001B3E93360059100E /* Main.storyboard */; };
 		9BCBB8041B3E93360059100E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8031B3E93360059100E /* Images.xcassets */; };
 		9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8051B3E93360059100E /* LaunchScreen.xib */; };
 		9BCBB8131B3E93360059100E /* SquidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB8121B3E93360059100E /* SquidTests.m */; };
-		9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB81D1B3E954C0059100E /* rabbit.png */; };
 		9BDFAD4F1B3ECF53000E763A /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFAD4E1B3ECF53000E763A /* Monster.m */; };
+		9BDFAD551B3EDF60000E763A /* Skill.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFAD541B3EDF60000E763A /* Skill.m */; };
+		9BDFAD591B3EEE6E000E763A /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD571B3EEE6E000E763A /* camera.png */; };
+		9BDFAD5A1B3EEE6E000E763A /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BDFAD581B3EEE6E000E763A /* rabbit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 		9BB9316A1B3E9EF80081B38E /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		9BB9316B1B3EA1F80081B38E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		9BB9316C1B3EA1F80081B38E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
-		9BC1C83E1B3EBC1B0089E3E4 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9BCBB7EE1B3E93360059100E /* Squid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCBB7F21B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB7F31B3E93360059100E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,9 +55,12 @@
 		9BCBB80C1B3E93360059100E /* SquidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SquidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCBB8111B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB8121B3E93360059100E /* SquidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquidTests.m; sourceTree = "<group>"; };
-		9BCBB81D1B3E954C0059100E /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabbit.png; sourceTree = "<group>"; };
 		9BDFAD4D1B3ECF53000E763A /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
 		9BDFAD4E1B3ECF53000E763A /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
+		9BDFAD531B3EDF60000E763A /* Skill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skill.h; sourceTree = "<group>"; };
+		9BDFAD541B3EDF60000E763A /* Skill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skill.m; sourceTree = "<group>"; };
+		9BDFAD571B3EEE6E000E763A /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		9BDFAD581B3EEE6E000E763A /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabbit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,8 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				334CDC401B3EDB4E00B398E6 /* remi.png */,
-				9BC1C83E1B3EBC1B0089E3E4 /* camera.png */,
-				9BCBB81D1B3E954C0059100E /* rabbit.png */,
+				9BDFAD561B3EEE4F000E763A /* images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -200,8 +202,19 @@
 			children = (
 				9BDFAD4D1B3ECF53000E763A /* Monster.h */,
 				9BDFAD4E1B3ECF53000E763A /* Monster.m */,
+				9BDFAD531B3EDF60000E763A /* Skill.h */,
+				9BDFAD541B3EDF60000E763A /* Skill.m */,
 			);
 			path = object;
+			sourceTree = "<group>";
+		};
+		9BDFAD561B3EEE4F000E763A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFAD571B3EEE6E000E763A /* camera.png */,
+				9BDFAD581B3EEE6E000E763A /* rabbit.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +298,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				334CDC411B3EDB4E00B398E6 /* remi.png in Resources */,
-				9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */,
 				9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */,
 				9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */,
 				9BCBB8041B3E93360059100E /* Images.xcassets in Resources */,
-				9BC1C83F1B3EBC1B0089E3E4 /* camera.png in Resources */,
 				9BCBB8021B3E93360059100E /* Main.storyboard in Resources */,
+				9BDFAD591B3EEE6E000E763A /* camera.png in Resources */,
+				9BDFAD5A1B3EEE6E000E763A /* rabbit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +323,7 @@
 			files = (
 				9BDFAD4F1B3ECF53000E763A /* Monster.m in Sources */,
 				9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */,
+				9BDFAD551B3EDF60000E763A /* Skill.m in Sources */,
 				9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */,
 				9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */,
 				9BB931671B3E9ECE0081B38E /* GameScene.m in Sources */,
