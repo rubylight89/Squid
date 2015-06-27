@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) Monster* monster;
 @property (nonatomic, strong) SKSpriteNode* cameraNode;
+@property (nonatomic, strong) SKSpriteNode* weapon;
 
 -(void)createBackground;
 
