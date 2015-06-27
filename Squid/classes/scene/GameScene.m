@@ -38,6 +38,9 @@
     // ui
     [self createUI];
     
+    // ball
+    [self addBall];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCameraClosed) name:kCameraCloseNotificationName object:nil];
     
     [GameManager sharedManager].takingPhoto = [UIImage imageNamed:@"remi.png"];
@@ -160,5 +163,24 @@
     [cameraButton setName:kCameraNode];
     [self addChild:cameraButton];
 }
+
+- (void)addBall {
+    CGFloat radius = 6.0;
+    
+    SKShapeNode *ball = [SKShapeNode node];
+    ball.name = @"ball";
+    ball.position = CGPointMake(CGRectGetMidX(self.frame), 150);
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathAddArc(path, NULL, 0, 0, radius, 0, M_PI * 2, YES);
+    ball.path = path;
+    ball.fillColor = [SKColor yellowColor];
+    ball.strokeColor = [SKColor clearColor];
+    
+    CGPathRelease(path);
+    
+    [self addChild:ball];
+}
+
 
 @end
