@@ -19,6 +19,7 @@
 		9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8051B3E93360059100E /* LaunchScreen.xib */; };
 		9BCBB8131B3E93360059100E /* SquidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB8121B3E93360059100E /* SquidTests.m */; };
 		9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB81D1B3E954C0059100E /* rabbit.png */; };
+		9BDFAD4F1B3ECF53000E763A /* Monster.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDFAD4E1B3ECF53000E763A /* Monster.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		9BCBB8111B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB8121B3E93360059100E /* SquidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquidTests.m; sourceTree = "<group>"; };
 		9BCBB81D1B3E954C0059100E /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabbit.png; sourceTree = "<group>"; };
+		9BDFAD4D1B3ECF53000E763A /* Monster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monster.h; sourceTree = "<group>"; };
+		9BDFAD4E1B3ECF53000E763A /* Monster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monster.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 		9BB9315D1B3E9ECE0081B38E /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				9BDFAD4C1B3ECF20000E763A /* object */,
 				9BB9315E1B3E9ECE0081B38E /* common */,
 				9BB9315F1B3E9ECE0081B38E /* manager */,
 				9BB931601B3E9ECE0081B38E /* scene */,
@@ -188,6 +192,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		9BDFAD4C1B3ECF20000E763A /* object */ = {
+			isa = PBXGroup;
+			children = (
+				9BDFAD4D1B3ECF53000E763A /* Monster.h */,
+				9BDFAD4E1B3ECF53000E763A /* Monster.m */,
+			);
+			path = object;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BDFAD4F1B3ECF53000E763A /* Monster.m in Sources */,
 				9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */,
 				9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */,
 				9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */,

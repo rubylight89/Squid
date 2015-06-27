@@ -64,6 +64,8 @@
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
         [GameManager sharedManager].takingPhoto = editedImage;
+        [[NSNotificationCenter defaultCenter] postNotificationName:kCameraCloseNotificationName object:self userInfo:nil];
+        
     }];
 }
 

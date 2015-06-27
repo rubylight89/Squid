@@ -7,27 +7,28 @@
 //
 
 #import "GameScene.h"
+#import "GameManager.h"
 
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
     /* Setup your scene here */
     /*
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    
-    myLabel.text = @"Hello, World!";
-    myLabel.fontSize = 65;
-    myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
-    
-    
-    [self addChild:myLabel];
-      */
+     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+     
+     myLabel.text = @"Hello, World!";
+     myLabel.fontSize = 65;
+     myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+     CGRectGetMidY(self.frame));
+     
+     
+     [self addChild:myLabel];
+     */
     
     _monster = [SKSpriteNode spriteNodeWithImageNamed:@"rabbit.png"];
     [_monster setName:kMonsterNode];
     _monster.position = CGPointMake(CGRectGetMidX(self.frame),
-                                   CGRectGetMidY(self.frame));
+                                    CGRectGetMidY(self.frame));
     [self addChild:_monster];
     
     
@@ -35,6 +36,8 @@
     cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), 50);
     [cameraButton setName:kCameraNode];
     [self addChild:cameraButton];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCameraClosed) name:kCameraCloseNotificationName object:nil];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -45,10 +48,10 @@
         
         SKNode *selectNode = [self nodeAtPoint:location];
         if ([selectNode.name compare:kMonsterNode] == NSOrderedSame) {
-         
+            
         } else if ([selectNode.name compare:kCameraNode] == NSOrderedSame){
             [self postNotificationAccessCamera];
-       }
+        }
     }
     
     /*
@@ -69,6 +72,11 @@
 
 -(void)postNotificationAccessCamera {
     [[NSNotificationCenter defaultCenter] postNotificationName:kCameraAccessNotificationName object:self userInfo:nil];
+}
+
+-(void)handleCameraClosed {
+    // handle camere closed
+    
 }
 
 -(void)update:(CFTimeInterval)currentTime {

@@ -10,6 +10,7 @@
 #define Squid_constant_h
 
 static NSString* const kCameraAccessNotificationName = @"CameraAccessNotificationName";
+static NSString* const kCameraCloseNotificationName = @"CameraClosedNotificationName";
 static NSString* const kMonsterNode = @"monster";
 static NSString* const kCameraNode = @"camera_buton";
 
