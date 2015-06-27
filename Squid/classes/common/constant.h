@@ -9,8 +9,8 @@
 #ifndef Squid_constant_h
 #define Squid_constant_h
 
-extern NSString* const kCameraAccessNotificationName = @"CameraAccessNotificationName";
-extern NSString* const kMonsterNode = @"monster";
-extern NSString* const kCameraNode = @"camera_buton";
+static NSString* const kCameraAccessNotificationName = @"CameraAccessNotificationName";
+static NSString* const kMonsterNode = @"monster";
+static NSString* const kCameraNode = @"camera_buton";
 
 #endif

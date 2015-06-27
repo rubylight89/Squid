@@ -49,7 +49,7 @@
     // Present the scene.
     [skView presentScene:scene];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCamera) name:@"kShowCamera" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCamera) name:kCameraAccessNotificationName object:nil];
 }
 
 - (void)showCamera {
@@ -62,9 +62,9 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
-        [GameManager sharedManager].takingPhoto = [UIImage imageNamed:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+        UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+//        [GameManager sharedManager].takingPhoto = [UIImage imageNamed:[info objectForKey:UIImagePickerControllerEditedImage]];
     }];
-
 }
 
 - (BOOL)shouldAutorotate

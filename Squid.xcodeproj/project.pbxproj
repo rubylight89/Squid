@@ -11,6 +11,7 @@
 		9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB931631B3E9ECE0081B38E /* GameScene.sks */; };
 		9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931661B3E9ECE0081B38E /* GameViewController.m */; };
 		9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9316C1B3EA1F80081B38E /* GameManager.m */; };
+		9BC1C83F1B3EBC1B0089E3E4 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1C83E1B3EBC1B0089E3E4 /* camera.png */; };
 		9BCBB7F41B3E93360059100E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F31B3E93360059100E /* main.m */; };
 		9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F61B3E93360059100E /* AppDelegate.m */; };
 		9BCBB8021B3E93360059100E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8001B3E93360059100E /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		9BB9316A1B3E9EF80081B38E /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
 		9BB9316B1B3EA1F80081B38E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		9BB9316C1B3EA1F80081B38E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
+		9BC1C83E1B3EBC1B0089E3E4 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		9BCBB7EE1B3E93360059100E /* Squid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCBB7F21B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB7F31B3E93360059100E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		9BCBB81C1B3E954C0059100E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9BC1C83E1B3EBC1B0089E3E4 /* camera.png */,
 				9BCBB81D1B3E954C0059100E /* rabbit.png */,
 			);
 			path = Resources;
@@ -269,6 +272,7 @@
 				9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */,
 				9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */,
 				9BCBB8041B3E93360059100E /* Images.xcassets in Resources */,
+				9BC1C83F1B3EBC1B0089E3E4 /* camera.png in Resources */,
 				9BCBB8021B3E93360059100E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

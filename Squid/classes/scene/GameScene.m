@@ -7,7 +7,6 @@
 //
 
 #import "GameScene.h"
-#import "constant.h"
 
 @implementation GameScene
 
@@ -31,18 +30,11 @@
                                    CGRectGetMidY(self.frame));
     [self addChild:_monster];
     
-    /*
-    SKSpriteNode *cameraButton = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] size:CGSizeMake(100, 80)];
-    cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), self.frame.size.height - 200);
+    
+    SKSpriteNode *cameraButton = [SKSpriteNode spriteNodeWithImageNamed:@"camera.png"];
+    cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), 50);
     [cameraButton setName:kCameraNode];
     [self addChild:cameraButton];
-    */
-    SKLabelNode *cameraLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-    cameraLabel.text = @"Camera";
-    cameraLabel.fontSize = 20;
-    cameraLabel.position = CGPointMake(CGRectGetMidX(self.frame), 50);
-    [cameraLabel setName:kCameraNode];
-    [self addChild:cameraLabel];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -53,11 +45,10 @@
         
         SKNode *selectNode = [self nodeAtPoint:location];
         if ([selectNode.name compare:kMonsterNode] == NSOrderedSame) {
+         
+        } else if ([selectNode.name compare:kCameraNode] == NSOrderedSame){
             [self postNotificationAccessCamera];
-        }
-//        if ([_monster containsPoint:location]) {
-//            [self postNotificationAccessCamera];
-//        }
+       }
     }
     
     /*
