@@ -8,10 +8,12 @@
 
 #import "GameScene.h"
 #import "GameManager.h"
+#define COLOR_DIF 7
 
 @implementation GameScene
 
 -(void)didMoveToView:(SKView *)view {
+    
     /* Setup your scene here */
     /*
      SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -38,6 +40,9 @@
     [self addChild:cameraButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCameraClosed) name:kCameraCloseNotificationName object:nil];
+    
+    [GameManager sharedManager].takingPhoto = [UIImage imageNamed:@"remi.png"];
+    [self handleCameraClosed];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -77,6 +82,59 @@
 -(void)handleCameraClosed {
     // handle camere closed
     
+    CGImageRef imageRef = [GameManager sharedManager].takingPhoto.CGImage;
+    
+    // データプロバイダを取得する
+    CGDataProviderRef dataProvider = CGImageGetDataProvider(imageRef);
+    
+    // ビットマップデータを取得する
+    CFDataRef dataRef = CGDataProviderCopyData(dataProvider);
+    UInt8* buffer = (UInt8*)CFDataGetBytePtr(dataRef);
+    
+    size_t bytesPerRow = CGImageGetBytesPerRow(imageRef);
+    
+    int redflag = 0;
+    int greenflag = 0;
+    int blueflag = 0;
+    
+    for (int x=0; x<[GameManager sharedManager].takingPhoto.size.width; x++) {
+        for (int y=0; y<[GameManager sharedManager].takingPhoto.size.height; y++) {
+            // ピクセルのポインタを取得する
+            UInt8*  pixelPtr = buffer + (int)(y) * bytesPerRow + (int)(x) * 4;
+            
+            // 色情報を取得する
+            UInt8 r = *(pixelPtr + 0);  // 赤
+            UInt8 g = *(pixelPtr + 1);  // 緑
+            UInt8 b = *(pixelPtr + 2);  // 青
+            
+            int rint = (int)r;
+            int gint = (int)g;
+            int bint = (int)b;
+            
+            if(rint-gint  > COLOR_DIF && rint-bint > COLOR_DIF){
+                redflag++;
+                NSLog(@"赤 %d",redflag);
+            }else if(gint-rint > COLOR_DIF && gint-bint > COLOR_DIF){
+                greenflag++;
+                NSLog(@"緑 %d",greenflag);
+            }else if(bint-rint > COLOR_DIF && bint-gint > COLOR_DIF){
+                blueflag++;
+                NSLog(@"青 %d",blueflag);
+            }
+            
+            NSLog(@"x:%d y:%d R:%d G:%d B:%d", x, y, r, g, b);
+        }
+    }
+    
+    if(greenflag <= redflag && blueflag <= redflag){
+        NSLog(@"この写真は赤です red:%d green:%d blue:%d",redflag,greenflag,blueflag);
+    }else if(redflag <= greenflag && blueflag <= greenflag){
+        NSLog(@"この写真は緑です red:%d green:%d blue:%d",redflag,greenflag,blueflag);
+    }else if(redflag <= blueflag && greenflag <= blueflag){
+        NSLog(@"この写真は青です red:%d green:%d blue:%d",redflag,greenflag,blueflag);
+    }
+    
+    CFRelease(dataRef);
 }
 
 -(void)update:(CFTimeInterval)currentTime {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334CDC411B3EDB4E00B398E6 /* remi.png in Resources */ = {isa = PBXBuildFile; fileRef = 334CDC401B3EDB4E00B398E6 /* remi.png */; };
 		9BB931671B3E9ECE0081B38E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931621B3E9ECE0081B38E /* GameScene.m */; };
 		9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB931631B3E9ECE0081B38E /* GameScene.sks */; };
 		9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931661B3E9ECE0081B38E /* GameViewController.m */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		334CDC401B3EDB4E00B398E6 /* remi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remi.png; sourceTree = "<group>"; };
 		9BB931611B3E9ECE0081B38E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		9BB931621B3E9ECE0081B38E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		9BB931631B3E9ECE0081B38E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		9BCBB81C1B3E954C0059100E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				334CDC401B3EDB4E00B398E6 /* remi.png */,
 				9BC1C83E1B3EBC1B0089E3E4 /* camera.png */,
 				9BCBB81D1B3E954C0059100E /* rabbit.png */,
 			);
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334CDC411B3EDB4E00B398E6 /* remi.png in Resources */,
 				9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */,
 				9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */,
 				9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */,
@@ -436,8 +440,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Squid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e433647c-3327-41a1-bf27-2b9b8d3f96b4";
 			};
 			name = Debug;
 		};
@@ -446,8 +452,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Squid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e433647c-3327-41a1-bf27-2b9b8d3f96b4";
 			};
 			name = Release;
 		};
