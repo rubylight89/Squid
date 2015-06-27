@@ -41,9 +41,6 @@
     // ui
     [self createUI];
     
-    // ball
-    [self addBall];
-    
     // weapons
     [self createWeapons];
     
@@ -175,8 +172,8 @@
     return result;
     // YUN TEST COLOR
     
-    for (int x=0; x<[GameManager sharedManager].takingPhoto.size.width; x++) {
-        for (int y=0; y<[GameManager sharedManager].takingPhoto.size.height; y++) {
+    for (int x=0; x<image.size.width; x++) {
+        for (int y=0; y<image.size.height; y++) {
             // ピクセルのポインタを取得する
             UInt8*  pixelPtr = buffer + (int)(y) * bytesPerRow + (int)(x) * 4;
             
@@ -260,24 +257,6 @@
     cameraButton.position = CGPointMake(CGRectGetMidX(self.frame), 65);
     [cameraButton setName:kCameraNode];
     [self addChild:cameraButton];
-}
-
-- (void)addBall {
-    CGFloat radius = 6.0;
-    
-    SKShapeNode *ball = [SKShapeNode node];
-    ball.name = @"ball";
-    ball.position = CGPointMake(CGRectGetMidX(self.frame), 150);
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathAddArc(path, NULL, 0, 0, radius, 0, M_PI * 2, YES);
-    ball.path = path;
-    ball.fillColor = [SKColor yellowColor];
-    ball.strokeColor = [SKColor clearColor];
-    
-    CGPathRelease(path);
-    
-    [self addChild:ball];
 }
 
 -(void)createWeapons{
