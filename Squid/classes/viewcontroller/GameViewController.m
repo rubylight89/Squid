@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "GameManager.h"
 
 @implementation SKScene (Unarchive)
 
@@ -42,11 +43,28 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene *scene = [GameScene unarchiveFromFile:@"GameScene"];
+    GameScene *scene = [[GameScene alloc]initWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
     [skView presentScene:scene];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCamera) name:@"kShowCamera" object:nil];
+}
+
+- (void)showCamera {
+    _imagePickerController = [[UIImagePickerController alloc] init];
+    _imagePickerController.delegate = self;
+    _imagePickerController.allowsEditing = YES;
+    _imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:_imagePickerController animated:YES completion:NULL];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [GameManager sharedManager].takingPhoto = [UIImage imageNamed:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+    }];
+
 }
 
 - (BOOL)shouldAutorotate

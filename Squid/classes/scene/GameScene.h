@@ -10,4 +10,7 @@
 
 @interface GameScene : SKScene
 
+@property (nonatomic, strong) SKSpriteNode* monster;
+@property (nonatomic, strong) SKSpriteNode* cameraNode;
+
 @end

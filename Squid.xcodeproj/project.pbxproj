@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BB931671B3E9ECE0081B38E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931621B3E9ECE0081B38E /* GameScene.m */; };
+		9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BB931631B3E9ECE0081B38E /* GameScene.sks */; };
+		9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB931661B3E9ECE0081B38E /* GameViewController.m */; };
+		9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BB9316C1B3EA1F80081B38E /* GameManager.m */; };
 		9BCBB7F41B3E93360059100E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F31B3E93360059100E /* main.m */; };
 		9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F61B3E93360059100E /* AppDelegate.m */; };
-		9BCBB7FA1B3E93360059100E /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7F91B3E93360059100E /* GameScene.m */; };
-		9BCBB7FC1B3E93360059100E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB7FB1B3E93360059100E /* GameScene.sks */; };
-		9BCBB7FF1B3E93360059100E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB7FE1B3E93360059100E /* GameViewController.m */; };
 		9BCBB8021B3E93360059100E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8001B3E93360059100E /* Main.storyboard */; };
 		9BCBB8041B3E93360059100E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8031B3E93360059100E /* Images.xcassets */; };
 		9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB8051B3E93360059100E /* LaunchScreen.xib */; };
 		9BCBB8131B3E93360059100E /* SquidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCBB8121B3E93360059100E /* SquidTests.m */; };
+		9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCBB81D1B3E954C0059100E /* rabbit.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,22 +31,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BB931611B3E9ECE0081B38E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		9BB931621B3E9ECE0081B38E /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		9BB931631B3E9ECE0081B38E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		9BB931651B3E9ECE0081B38E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		9BB931661B3E9ECE0081B38E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		9BB9316A1B3E9EF80081B38E /* constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constant.h; sourceTree = "<group>"; };
+		9BB9316B1B3EA1F80081B38E /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		9BB9316C1B3EA1F80081B38E /* GameManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManager.m; sourceTree = "<group>"; };
 		9BCBB7EE1B3E93360059100E /* Squid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCBB7F21B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB7F31B3E93360059100E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9BCBB7F51B3E93360059100E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9BCBB7F61B3E93360059100E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9BCBB7F81B3E93360059100E /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		9BCBB7F91B3E93360059100E /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
-		9BCBB7FB1B3E93360059100E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		9BCBB7FD1B3E93360059100E /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		9BCBB7FE1B3E93360059100E /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		9BCBB8011B3E93360059100E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BCBB8031B3E93360059100E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9BCBB8061B3E93360059100E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9BCBB80C1B3E93360059100E /* SquidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SquidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCBB8111B3E93360059100E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BCBB8121B3E93360059100E /* SquidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquidTests.m; sourceTree = "<group>"; };
+		9BCBB81D1B3E954C0059100E /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rabbit.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BB9315D1B3E9ECE0081B38E /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				9BB9315E1B3E9ECE0081B38E /* common */,
+				9BB9315F1B3E9ECE0081B38E /* manager */,
+				9BB931601B3E9ECE0081B38E /* scene */,
+				9BB931641B3E9ECE0081B38E /* viewcontroller */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		9BB9315E1B3E9ECE0081B38E /* common */ = {
+			isa = PBXGroup;
+			children = (
+				9BB9316A1B3E9EF80081B38E /* constant.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		9BB9315F1B3E9ECE0081B38E /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				9BB9316B1B3EA1F80081B38E /* GameManager.h */,
+				9BB9316C1B3EA1F80081B38E /* GameManager.m */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		9BB931601B3E9ECE0081B38E /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				9BB931611B3E9ECE0081B38E /* GameScene.h */,
+				9BB931621B3E9ECE0081B38E /* GameScene.m */,
+				9BB931631B3E9ECE0081B38E /* GameScene.sks */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		9BB931641B3E9ECE0081B38E /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				9BB931651B3E9ECE0081B38E /* GameViewController.h */,
+				9BB931661B3E9ECE0081B38E /* GameViewController.m */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
 		9BCBB7E51B3E93350059100E = {
 			isa = PBXGroup;
 			children = (
@@ -86,17 +139,14 @@
 		9BCBB7F01B3E93360059100E /* Squid */ = {
 			isa = PBXGroup;
 			children = (
+				9BB9315D1B3E9ECE0081B38E /* classes */,
 				9BCBB7F51B3E93360059100E /* AppDelegate.h */,
 				9BCBB7F61B3E93360059100E /* AppDelegate.m */,
-				9BCBB7F81B3E93360059100E /* GameScene.h */,
-				9BCBB7F91B3E93360059100E /* GameScene.m */,
-				9BCBB7FB1B3E93360059100E /* GameScene.sks */,
-				9BCBB7FD1B3E93360059100E /* GameViewController.h */,
-				9BCBB7FE1B3E93360059100E /* GameViewController.m */,
 				9BCBB8001B3E93360059100E /* Main.storyboard */,
 				9BCBB8031B3E93360059100E /* Images.xcassets */,
 				9BCBB8051B3E93360059100E /* LaunchScreen.xib */,
 				9BCBB7F11B3E93360059100E /* Supporting Files */,
+				9BCBB81C1B3E954C0059100E /* Resources */,
 			);
 			path = Squid;
 			sourceTree = "<group>";
@@ -125,6 +175,14 @@
 				9BCBB8111B3E93360059100E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9BCBB81C1B3E954C0059100E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BCBB81D1B3E954C0059100E /* rabbit.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,9 +265,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BCBB81E1B3E954C0059100E /* rabbit.png in Resources */,
+				9BB931681B3E9ECE0081B38E /* GameScene.sks in Resources */,
 				9BCBB8071B3E93360059100E /* LaunchScreen.xib in Resources */,
 				9BCBB8041B3E93360059100E /* Images.xcassets in Resources */,
-				9BCBB7FC1B3E93360059100E /* GameScene.sks in Resources */,
 				9BCBB8021B3E93360059100E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,9 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BCBB7FF1B3E93360059100E /* GameViewController.m in Sources */,
+				9BB931691B3E9ECE0081B38E /* GameViewController.m in Sources */,
 				9BCBB7F71B3E93360059100E /* AppDelegate.m in Sources */,
-				9BCBB7FA1B3E93360059100E /* GameScene.m in Sources */,
+				9BB9316D1B3EA1F80081B38E /* GameManager.m in Sources */,
+				9BB931671B3E9ECE0081B38E /* GameScene.m in Sources */,
 				9BCBB7F41B3E93360059100E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +486,7 @@
 				9BCBB8181B3E93360059100E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BCBB8191B3E93360059100E /* Build configuration list for PBXNativeTarget "SquidTests" */ = {
 			isa = XCConfigurationList;
@@ -434,6 +495,7 @@
 				9BCBB81B1B3E93360059100E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
