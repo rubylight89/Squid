@@ -63,8 +63,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
-
-        [GameManager sharedManager].takingPhoto = editedImage;
+        UIGraphicsBeginImageContext(CGSizeMake(480,320));
+        CGContextRef            context = UIGraphicsGetCurrentContext();
+        [editedImage drawInRect: CGRectMake(0, 0, 480, 320)];
+        UIImage        *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+//        UIImage *resizeImage = [self resizeImage:smallImage toSize:CGSizeMake(150, 150)];
+        
+        [GameManager sharedManager].takingPhoto = smallImage;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCameraCloseNotificationName object:self userInfo:nil];
     }];
 }
@@ -91,6 +97,36 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+-(UIImage *)resizeImage:(UIImage *)image toSize:(CGSize)size
+{
+    float width = size.width;
+    float height = size.height;
+    
+    UIGraphicsBeginImageContext(size);
+    CGRect rect = CGRectMake(0, 0, width, height);
+    
+    float widthRatio = image.size.width / width;
+    float heightRatio = image.size.height / height;
+    float divisor = widthRatio > heightRatio ? widthRatio : heightRatio;
+    
+    width = image.size.width / divisor;
+    height = image.size.height / divisor;
+    
+    rect.size.width  = width;
+    rect.size.height = height;
+    
+    if(height < width)
+        rect.origin.y = height / 3;
+    
+    [image drawInRect: rect];
+    
+    UIImage *smallImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return smallImage;
 }
 
 @end

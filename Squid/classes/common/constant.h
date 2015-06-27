@@ -14,4 +14,12 @@ static NSString* const kCameraCloseNotificationName = @"CameraClosedNotification
 static NSString* const kMonsterNode = @"monster";
 static NSString* const kCameraNode = @"camera_buton";
 
+typedef enum{
+    RED = 0,
+    GREEN = 1,
+    BLUE = 2,
+    BLACK = 3
+} COLOR_DECTION_RESULT;
+
+
 #endif
