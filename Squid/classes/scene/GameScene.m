@@ -52,6 +52,7 @@
 }
 
 -(void)setupVariables{
+    isDefense=NO;
     turnIndex = 0;
     isPlayerAlive = YES;
 }
@@ -253,11 +254,6 @@
     int redflag = 0;
     int greenflag = 0;
     int blueflag = 0;
-    
-    // YUN TEST COLOR
-    result = RED;
-    return result;
-    // YUN TEST COLOR
     
     for (int x=0; x<image.size.width; x++) {
         for (int y=0; y<image.size.height; y++) {

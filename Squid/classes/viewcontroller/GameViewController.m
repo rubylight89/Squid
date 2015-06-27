@@ -63,13 +63,12 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
-        UIGraphicsBeginImageContext(CGSizeMake(480,320));
+        UIGraphicsBeginImageContext(CGSizeMake(120,80));
         CGContextRef            context = UIGraphicsGetCurrentContext();
-        [editedImage drawInRect: CGRectMake(0, 0, 480, 320)];
+        [editedImage drawInRect: CGRectMake(0, 0, 120, 80)];
         UIImage        *smallImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
-//        UIImage *resizeImage = [self resizeImage:smallImage toSize:CGSizeMake(150, 150)];
-        
+        NSLog(@"s %f %f", smallImage.size.width, smallImage.size.height);
         [GameManager sharedManager].takingPhoto = smallImage;
         [[NSNotificationCenter defaultCenter] postNotificationName:kCameraCloseNotificationName object:self userInfo:nil];
     }];
