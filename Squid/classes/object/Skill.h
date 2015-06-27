@@ -1,5 +1,5 @@
 //
-//  Monster.h
+//  Skill.h
 //  Squid
 //
 //  Created by Duong Phan on 6/27/15.
@@ -8,11 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Monster : SKSpriteNode{
-}
+@interface Skill : SKSpriteNode
 
-- (void) wait;
-- (void) attack;
-- (void) hurt;
+- (void)setPictureNode:(UIImage *)image;
 
 @end
